@@ -20,7 +20,7 @@ int main() {
 		Point b(4.8f, 2.1f);
 		Point c(2.9f, 5.6f);
 
-		Point inside(3.0f, 3.5f);     // likely inside
+		Point inside(3.0f, 2.83f);     // likely inside
 		Point edge(3.0f, 2.75f);        // likely on edge ab
 		Point vertex(1.2f, 3.4f);       // exactly on vertex a
 		Point outside(11.0f, 5.0f);     // outside triangle

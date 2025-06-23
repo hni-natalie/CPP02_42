@@ -52,7 +52,7 @@ float Fixed::toFloat() const {
 }
 
 int Fixed::toInt() const {
-	return _value / (1 << _fractional_bits);
+	return _value >> _fractional_bits;
 }
 
 /*  
