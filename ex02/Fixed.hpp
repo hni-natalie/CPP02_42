@@ -49,9 +49,9 @@ class Fixed {
 
 		// returns a reference to the modified object
 		Fixed& operator++(); //pre-increment
-		Fixed& operator++(int); //post-increment
+		Fixed operator++(int); //post-increment
 		Fixed& operator--(); //pre-decrement
-		Fixed& operator--(int); //post-decrement
+		Fixed operator--(int); //post-decrement
 
 		static Fixed& min(Fixed& f1, Fixed& f2);
 		static const Fixed& min(Fixed const& f1, Fixed const& f2);

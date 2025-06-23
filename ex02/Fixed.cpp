@@ -109,10 +109,10 @@ Fixed& Fixed::operator++() {
 	return *this;
 }
 
-Fixed& Fixed::operator++(int) {
+Fixed Fixed::operator++(int) {
 	Fixed temp = *this;
-	_value++;
-	return *this;
+	++_value;
+	return temp;
 }
 
 Fixed& Fixed::operator--() {
@@ -120,10 +120,10 @@ Fixed& Fixed::operator--() {
 	return *this;
 }
 
-Fixed& Fixed::operator--(int) {
+Fixed Fixed::operator--(int) {
 	Fixed temp = *this;
-	_value--;
-	return *this;
+	--_value;
+	return temp;
 }
 
 Fixed& Fixed::min(Fixed& f1, Fixed& f2) {
