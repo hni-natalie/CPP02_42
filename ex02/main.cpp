@@ -15,19 +15,37 @@
 int main( void ) 
 {
 	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
-	std::cout << "original: a is " << a << std::endl;
-	a = Fixed( 1234.4321f );
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	// Fixed const b(1);
+	// Fixed c ( Fixed ( 5.5f ));
+
+	// a = a + b;
+	// std::cout << a + b << std::endl;
+	// std::cout << a - b << std::endl;
+	// std::cout << c * b << std::endl;
+	// std::cout << c / b << std::endl;
+
+	// if (a == b) {
+    //     std::cout << "a is equal to b" << std::endl;
+    // }
+    // else if (a < b) {
+    //     std::cout << "a is smaller than b" << std::endl;
+    // }
+	// else if (a > b) {
+    //     std::cout << "a is larger than b" << std::endl;
+    // }
+	// else {
+    //     std::cout << "a is not equal to b" << std::endl;
+    // }
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl; // 1/256
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl; // 2/256
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 	
 	return 0;
 }
