@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:08:30 by hni-xuan          #+#    #+#             */
-/*   Updated: 2025/06/19 14:09:34 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2025/06/25 13:10:25 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,14 @@ Fixed::Fixed( float const f ) {
 
 Fixed::~Fixed() {}
 
-Fixed::Fixed(const Fixed& other) : _value(other._value) {}
+Fixed::Fixed(const Fixed& other) {
+	*this = other;
+}
 
 Fixed& Fixed::operator=(const Fixed& other) {
 	// avoid self assignment
 	if (this != &other) {
-		_value = other._value;
+		_value = other.getRawBits();
 	}
 
 	return *this;
@@ -48,7 +50,7 @@ void Fixed::setRawBits( int const raw ) {
 
 float Fixed::toFloat() const {
 	// convert _value into float first in order to get float
-	return static_cast<float>(_value) / (1 << _fractional_bits);
+	return (float)_value / (1 << _fractional_bits);
 }
 
 int Fixed::toInt() const {

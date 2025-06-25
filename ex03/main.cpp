@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:08:30 by hni-xuan          #+#    #+#             */
-/*   Updated: 2025/06/19 14:09:34 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2025/06/25 13:44:19 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-
-bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 int main() {
 	{
@@ -43,7 +41,7 @@ int main() {
 		Point onVertexA(0, 0);           
 		Point onVertexB(10, 0);           
 		Point onVertexC(5, 10);          
-		Point veryCloseToEdge(5, 0.0001);
+		Point veryCloseToEdge(5, 0.01);
 
 		std::cout << "Point inside triangle?       " << bsp(a, b, c, inside) << std::endl;
 		std::cout << "Point outside triangle?      " << bsp(a, b, c, outside) << std::endl;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   bsp.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:08:30 by hni-xuan          #+#    #+#             */
-/*   Updated: 2025/06/19 14:09:34 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2025/06/25 13:41:55 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ bool bsp( Point const a, Point const b, Point const c, Point const point) {
 	float area2 = area(a, c, point);
 	float area3 = area(b, c, point);
 
-	if (area1 == 0 || area2 == 0 || area3 == 0)
+	if (area1 == float(0) || area2 == float(0) || area3 == float(0))
 		return false;
 
-	return (area1 + area2 + area3) == actual_area;
+	return ((area1 + area2 + area3) - actual_area) == 0;
 }

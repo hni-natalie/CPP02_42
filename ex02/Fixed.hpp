@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:08:30 by hni-xuan          #+#    #+#             */
-/*   Updated: 2025/06/19 14:09:34 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2025/06/24 13:10:18 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,15 @@ class Fixed {
 
 		// returns a reference to the modified object
 		Fixed& operator++(); 	//pre-increment
-		Fixed operator++(int); 	//post-increment
 		Fixed& operator--(); 	//pre-decrement
+		Fixed operator++(int); 	//post-increment
 		Fixed operator--(int); 	//post-decrement
 
+		// non-const version
 		static Fixed& min(Fixed& f1, Fixed& f2);
-		static const Fixed& min(Fixed const& f1, Fixed const& f2);
 		static Fixed& max(Fixed& f1, Fixed& f2);
+		// const version 
+		static const Fixed& min(Fixed const& f1, Fixed const& f2);
 		static const Fixed& max(Fixed const& f1, Fixed const& f2);
 	};
 	
