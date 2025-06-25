@@ -6,12 +6,25 @@
 /*   By: hni-xuan <hni-xuan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 13:08:30 by hni-xuan          #+#    #+#             */
-/*   Updated: 2025/06/25 13:07:59 by hni-xuan         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:42:17 by hni-xuan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
+/*  
+	Fractional bits control the precision of the fixed-point number
+	
+	Converting float to fixed-point
+		multiply (1 << fractional_bits)
+		make its decimal part into whole number so that we can store 
+		it in an int without losing precision 
+		
+	Converting fixed-point to float
+		divide (1 << fractional_bits)
+
+	std::cout by default only show 6 s.f. for decimal numbers
+*/
 int const Fixed::_fractional_bits = 8;
 
 Fixed::Fixed() : _value(0) {
